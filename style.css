@@ -1,3 +1,8 @@
+:root{
+    --main-red: red;
+    --main-blue: blue;
+}
+
 body, html{
     margin: 0;
     padding: 0;
@@ -8,7 +13,7 @@ header{
     padding: 1% 0 0.5%;
     color: white;
     background: red;
-    height: 35vh;
+    height: 27vh;
 }
 
 header h1{
@@ -26,5 +31,46 @@ header p{
     font-family: 'Kanit', sans-serif;
     font-weight: 200;
     font-size: 18px;
+}
+
+#section-one{
+    display: flex;
+    justify-content: center;
+    margin-top: -5%;
+}
+
+#word-box{
+    background-color: var(--main-blue);
+    width: 30%;
+    text-align: center;
+    color: white;
+}
+
+#word-box h2{
+    font-weight: 600;
+    font-size: 48px;
+    margin: 0;
+}
+
+.bottom-warning{
+    font-weight: 300;
+}
+
+#drawn-button{
+    background-color: var(--main-red);
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-left: -32px;
+    margin-top: -32px;
+    cursor: pointer;
+}
+
+#drawn-button img{
+    max-width: 36px;
 }
 
