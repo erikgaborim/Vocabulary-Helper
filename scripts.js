@@ -27,9 +27,16 @@ const Signs = {
 }
 
 const Raffle = {
+    wordPlace: document.querySelector('#word-place'),
+
     draw(){
         const anySign = Math.floor(Math.random() * Signs.all.length);
         const randomSign = Signs.all[anySign]; // resultado aleatório
+        return randomSign
+    },
+
+    showWord(){        
+        Raffle.wordPlace.innerHTML = Raffle.draw().wordValue
     },
 
     showMeaning(){
