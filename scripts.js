@@ -26,21 +26,29 @@ const Signs = {
     }
 }
 
-const Raffle = {
-    wordPlace: document.querySelector('#word-place'),
-
+const Raffle = { 
     draw(){
         const anySign = Math.floor(Math.random() * Signs.all.length);
         const randomSign = Signs.all[anySign]; // resultado aleatório
         return randomSign
     },
+}
 
-    showWord(){        
-        Raffle.wordPlace.innerHTML = Raffle.draw().wordValue
+const DOM = {
+    wordPlace: document.querySelector('#word-place'),
+    wordDrawn: Raffle.draw(),
+
+    click(){
+        DOM.wordDrawn = Raffle.draw()
+        DOM.showWord()
+    },
+
+    showWord(){
+        DOM.wordPlace.innerHTML = DOM.wordDrawn.wordValue
     },
 
     showMeaning(){
-        alert('mostrar significado')
+        DOM.wordPlace.innerHTML = DOM.wordDrawn.meaningValue
     }
 }
 
@@ -79,6 +87,7 @@ const Form = {
             Signs.add(Form.getValues())
             Form.clearFields()
             Modal.close()
+            alert('The word has been added')
         }catch(error){
             alert(error.message)
         }
@@ -88,6 +97,10 @@ const Form = {
 const App = {
     init(){
         Storage.set(Signs.all)
+    },
+
+    reload(){
+        DOM.drawAgain()
     }
 }
 
