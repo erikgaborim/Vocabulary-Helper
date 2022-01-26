@@ -28,16 +28,51 @@
     <main>
         <section id="section-one">
             <div id="word-box">
-                <p>Word drawn</p>
-                <h2>PALAVRA</h2>
-                <p class="bottom-warning">Tap to know the meaning</p>
+                <div id="show-meaning-button" onclick="Ruffle.showMeaning()">
+                    <p>Word drawn</p>
+                    <h2>PALAVRA</h2>
+                    <p class="bottom-warning">Tap to know the meaning</p>
+                </div>
 
                 <div id="drawn-button" onclick="Ruffle.draw()">
-                    <img src="./images/swap.png" alt="Drawn button">
+                    <img src="./images/swap.png" alt="Drawn button icon">
                 </div>
             </div>
         </section>
+
+        <section id="section-two">
+            <div id="new-words" onclick="Modal.open()">
+                <img src="./images/add.png" alt="Add icon">
+                <p>Add words to draw list</p>
+            </div>
+        </section>
     </main>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <form action="" onsubmit="Form.submit(event)">
+                <h3>Write a word and its meaning</h3>
+                <div class="div-input">
+                    <label for="word">Word</label>
+                    <input type="text" id="word" name="word">
+                </div>
+
+                <div class="div-input">
+                    <label for="meaning">Meaning</label>
+                    <input type="text" id="meaning" name="meaning">
+                </div>
+
+                <div class="div-buttons">
+                    <a class="form-button button-cancel" href="" onclick="Modal.close()">Cancel</a>
+                    <button class=" form-button button-add" type="submit">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        &copy; Erik Gaborim - 2022
+    </footer>
 
     <script src="./scripts.js"></script>
 </body>
