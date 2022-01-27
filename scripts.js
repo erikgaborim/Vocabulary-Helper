@@ -34,21 +34,50 @@ const Raffle = {
     },
 }
 
+
 const DOM = {
     wordPlace: document.querySelector('#word-place'),
     wordDrawn: Raffle.draw(),
+    isTheFirstWord: true,
 
     click(){
+        DOM.isTheFirstWord = false
         DOM.wordDrawn = Raffle.draw()
         DOM.showWord()
     },
 
+    makeDivWord(){
+        document.querySelector('#word-box').style.backgroundColor = "#0000ff"
+
+        let textTop = document.querySelector('.top-warning')
+        textTop.innerHTML = "Word drawn"
+
+        let textBottom = document.querySelector('.bottom-warning')
+        textBottom.innerHTML = "Tap to know the meaning"
+    },
+
+    makeDivMeaning(){
+        document.querySelector('#word-box').style.backgroundColor = "#009700"
+
+        let textTop = document.querySelector('.top-warning')
+        textTop.innerHTML = "Meaning"
+
+        let textBottom = document.querySelector('.bottom-warning')
+        textBottom.innerHTML = `${DOM.wordDrawn.wordValue}`
+    },
+
     showWord(){
         DOM.wordPlace.innerHTML = DOM.wordDrawn.wordValue
+        DOM.makeDivWord()
     },
 
     showMeaning(){
-        DOM.wordPlace.innerHTML = DOM.wordDrawn.meaningValue
+        if(DOM.isTheFirstWord){
+            alert("Draw a word before it! (click on the red button)")
+        }else{
+            DOM.wordPlace.innerHTML = DOM.wordDrawn.meaningValue
+            DOM.makeDivMeaning()
+        }
     }
 }
 

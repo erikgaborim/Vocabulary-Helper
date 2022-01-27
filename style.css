@@ -1,7 +1,7 @@
 :root{
     --main-red: red;
-    --main-blue: blue;
-    --main-green: rgb(0, 151, 0);
+    --main-blue: #0000ff;
+    --main-green: #009700;
     --green-hover: green;
     --red-hover: rgb(206, 0, 0);
     --letter-footer: #878787;
@@ -53,7 +53,7 @@ header p{
 
 #word-box h2{
     font-weight: 600;
-    font-size: 48px;
+    font-size: 40px;
     margin: 0;
 }
 
