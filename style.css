@@ -4,6 +4,7 @@
     --main-green: #009700;
     --green-hover: green;
     --red-hover: rgb(206, 0, 0);
+    --blue-hover: #0000d6;
     --letter-footer: #878787;
 }
 
@@ -139,7 +140,8 @@ footer{
 
 .modal{
     background-color: white;
-    padding: 1%;
+    padding: 2% 5%;
+    width: 25vw;
     border-radius: 0.8rem;
 }
 
@@ -154,6 +156,7 @@ footer{
 }
 
 .modal h3{
+    text-align: center;
     font-family: 'Montserrat';
     font-weight: 500;
 }
@@ -198,4 +201,84 @@ footer{
 
 .modal .div-buttons .button-cancel:hover{
     background-color: var(--red-hover);
+}
+
+#div-words-list{
+    width: 25vw;
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+}
+
+#words-list-button{
+    height: 36px;
+    width: 25vw;
+    padding: 1% 0;
+    border-radius: 1.25rem;
+    border: none;
+    margin-top: 4%;
+    background-color: var(--main-blue);
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#words-list-button:hover{
+    background-color: var(--blue-hover);
+}
+
+.modal-list-overlay{
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    visibility: hidden;
+    opacity: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-list-overlay.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-list{
+    background-color: white;
+}
+
+.modal-list h2{
+    text-align: center;
+}
+
+.modal-list table{
+    width: 50vw;
+    border-spacing: 0;
+    padding: 2%;
+}
+
+.modal-list th,
+.modal-list td{
+    text-align: center;
+    border: solid;
+    padding: 10px 0;
+}
+
+.modal-list th:first-child,
+.modal-list td:first-child{
+    width: 50%;
+    border-right: none;
+}
+
+.modal-list td{
+    border-top: none;
 }

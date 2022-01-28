@@ -49,24 +49,49 @@
     </main>
 
     <div class="modal-overlay">
-        <div class="modal">
-            <form action="" onsubmit="Form.submit(event)">
-                <h3>Write a word and its meaning</h3>
-                <div class="div-input">
-                    <label for="word">Word</label>
-                    <input type="text" id="word" name="word">
-                </div>
+        <div class="general-modal">
+            <div class="modal">
+                <form method="POST" action="" onsubmit="Form.submit(event)">
+                    <h3>Write a word and its meaning</h3>
+                    <div class="div-input">
+                        <label for="word">Word</label>
+                        <input type="text" id="word" name="word">
+                    </div>
 
-                <div class="div-input">
-                    <label for="meaning">Meaning</label>
-                    <input type="text" id="meaning" name="meaning">
-                </div>
+                    <div class="div-input">
+                        <label for="meaning">Meaning</label>
+                        <input type="text" id="meaning" name="meaning">
+                    </div>
 
-                <div class="div-buttons">
-                    <a class="form-button button-cancel" href="" onclick="Modal.close()">Cancel</a>
-                    <button class=" form-button button-add" type="submit">Add</button>
-                </div>
-            </form>
+                    <div class="div-buttons">
+                        <a class="form-button button-cancel" href="" onclick="Modal.close()">Cancel</a>
+                        <button class=" form-button button-add" type="submit">Add</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="div-words-list">
+                <button id="words-list-button" onclick="ModalList.open()">+ Show words list</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-list-overlay">
+        <div class="modal-list">
+            <h2>Words list</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Word</th>
+                        <th>Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 

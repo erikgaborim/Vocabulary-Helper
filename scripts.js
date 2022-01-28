@@ -7,6 +7,15 @@ const Modal = {
     }
 }
 
+const ModalList = {
+    open(){
+        document.querySelector('.modal-list-overlay').classList.add('active')
+    },
+    close(){
+        document.querySelector('.modal-list-overlay').classList.remove('active')
+    }
+}
+
 const Storage = {
     get(){
         return JSON.parse(localStorage.getItem("wordMeaning")) || []
@@ -33,7 +42,6 @@ const Raffle = {
         return randomSign
     },
 }
-
 
 const DOM = {
     wordPlace: document.querySelector('#word-place'),
@@ -78,6 +86,37 @@ const DOM = {
             DOM.wordPlace.innerHTML = DOM.wordDrawn.meaningValue
             DOM.makeDivMeaning()
         }
+    }
+}
+
+const DOMWordsList = {
+    tableBody: document.querySelector('.modal-list tbody'),
+
+    addSignToList(sign){
+        const newSign = document.createElement('tr')
+        newSign.innerHTML = DOMWordsList.innerHTMLSign(sign);
+        DOMWordsList.tableBody.appendChild(newSign)
+    },
+
+    innerHTMLSign(sign){
+        const html = `
+        <tr>
+            <td>${sign.wordValue}</td>
+            <td>${sign.meaningValue}</td>
+        </tr>
+        `
+        return html
+    }
+}
+
+const List = {
+    eachSign(){
+        let count = 0;
+
+        Signs.all.forEach(sign => {
+            DOMWordsList.addSignToList(sign)
+            count++
+        });
     }
 }
 
@@ -126,6 +165,7 @@ const Form = {
 const App = {
     init(){
         Storage.set(Signs.all)
+        List.eachSign()
     },
 
     reload(){
