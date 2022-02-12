@@ -4,7 +4,7 @@ const Modal = {
     },
     close(){
         document.querySelector('.modal-overlay').classList.remove('active')
-    }
+    },
 }
 
 const ModalList = {
@@ -49,9 +49,17 @@ const DOM = {
     isTheFirstWord: true,
 
     click(){
-        DOM.isTheFirstWord = false
-        DOM.wordDrawn = Raffle.draw()
-        DOM.showWord()
+        let countSign = 0
+        Signs.all.forEach(sign => {
+            countSign++
+        });
+        if(countSign == 0){
+            alert("Please, enter a word before drawing (on the button 'add words to draw list')")
+        }else{
+            DOM.isTheFirstWord = false
+            DOM.wordDrawn = Raffle.draw()
+            DOM.showWord()
+        }
     },
 
     makeDivWord(){

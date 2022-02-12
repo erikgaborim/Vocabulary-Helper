@@ -42,8 +42,7 @@
 
         <section id="section-two">
             <div id="new-words" onclick="Modal.open()">
-                <img src="./images/add.png" alt="Add icon">
-                <p>Add words to draw list</p>
+                <p>+ Add words to draw list</p>
             </div>
         </section>
     </main>
@@ -71,7 +70,10 @@
             </div>
 
             <div id="div-words-list">
-                <button id="words-list-button" onclick="ModalList.open()">+ Show words list</button>
+                <button class="buttons-modal-out" id="words-list-button" onclick="ModalList.open()">Show words list</button>
+            </div>
+            <div id="div-add-file">
+                <button class="buttons-modal-out" id="add-file-button">Add file</button>
             </div>
         </div>
     </div>
@@ -93,6 +95,7 @@
                 </tbody>
             </table>
         </div>
+        <button class="button-close-modal" onclick="ModalList.close()">X</button>
     </div>
 
     <footer>

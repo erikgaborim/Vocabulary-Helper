@@ -210,24 +210,42 @@ footer{
     justify-content: center;
 }
 
-#words-list-button{
+.buttons-modal-out{
     height: 36px;
     width: 25vw;
     padding: 1% 0;
     border-radius: 1.25rem;
     border: none;
     margin-top: 4%;
-    background-color: var(--main-blue);
-    color: white;
-    font-family: 'Montserrat';
     font-weight: 500;
     font-size: 18px;
     cursor: pointer;
     transition: 0.3s;
+    color: white;
+    font-family: 'Montserrat';
+}
+
+#words-list-button{
+    background-color: var(--main-blue);
 }
 
 #words-list-button:hover{
     background-color: var(--blue-hover);
+}
+
+#div-add-file{
+    width: 25vw;
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+}
+
+#add-file-button{
+    background-color: var(--main-green);
+}
+
+#add-file-button:hover{
+    background-color: var(--green-hover);
 }
 
 .modal-list-overlay{
@@ -254,6 +272,7 @@ footer{
 
 .modal-list{
     background-color: white;
+    border-radius: 8px;
 }
 
 .modal-list h2{
@@ -281,4 +300,26 @@ footer{
 
 .modal-list td{
     border-top: none;
+}
+
+.button-close-modal{
+    background-color: red;
+    height: 26px;
+    width: 26px;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+    top: -41vh;
+    left: -13px;
+    
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+    font-family: 'Montserrat';
+}
+
+.button-close-modal:hover{
+    background-color: var(--red-hover);
 }
