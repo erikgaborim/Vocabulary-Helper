@@ -38,7 +38,7 @@ header p{
     font-size: 18px;
 }
 
-#section-one{
+#main-section{
     display: flex;
     justify-content: center;
     margin-top: -5%;
@@ -84,14 +84,14 @@ header p{
     max-width: 36px;
 }
 
-#section-two{
+#add-words-section{
     display: flex;
-    justify-content: center;
-    margin-top: 5%;
+    justify-content: space-around;
+    margin: 8% 8% 0;
+
 }
 
-#new-words{
-    background: linear-gradient(135deg, red, blue);
+.add-words-buttons{
     color: white;
     font-weight: 400;
     font-size: 20px;
@@ -99,12 +99,43 @@ header p{
     align-items: center;
     justify-content: center;
     padding: 1.2%;
+    width: 300px;
     cursor: pointer;
+    border-radius: 8px;
 }
 
-#new-words img{
-    max-width: 36px;
-    margin-right: 12px;
+#new-words{
+    background: linear-gradient(135deg, red, blue);
+}
+
+#add-file{
+    background: linear-gradient(135deg, blue, red);
+}
+
+#bottom-section{
+    display: flex;
+    justify-content: center;
+    padding: 6%;
+}
+
+.show-list-button{
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30vw;
+    cursor: pointer;
+    border-radius: 36px;
+}
+
+.show-list-button p{
+    margin: 10px;
+}
+
+#words-list{
+    background-color: var(--main-blue);
 }
 
 footer{
@@ -221,31 +252,9 @@ footer{
     font-size: 18px;
     cursor: pointer;
     transition: 0.3s;
+    background-color: var(--main-blue);
     color: white;
     font-family: 'Montserrat';
-}
-
-#words-list-button{
-    background-color: var(--main-blue);
-}
-
-#words-list-button:hover{
-    background-color: var(--blue-hover);
-}
-
-#div-add-file{
-    width: 25vw;
-    padding: 0 5%;
-    display: flex;
-    justify-content: center;
-}
-
-#add-file-button{
-    background-color: var(--main-green);
-}
-
-#add-file-button:hover{
-    background-color: var(--green-hover);
 }
 
 .modal-list-overlay{

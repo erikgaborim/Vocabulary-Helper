@@ -26,7 +26,7 @@
     </header>
 
     <main>
-        <section id="section-one">
+        <section id="main-section">
             <div id="word-box">
                 <div id="show-meaning-button" onclick="DOM.showMeaning()">
                     <p class="top-warning">Word drawn</p>
@@ -40,9 +40,13 @@
             </div>
         </section>
 
-        <section id="section-two">
-            <div id="new-words" onclick="Modal.open()">
+        <section id="add-words-section">
+            <div id="new-words" class="add-words-buttons" onclick="Modal.open()">
                 <p>+ Add words to draw list</p>
+            </div>
+
+            <div id="add-file" class="add-words-buttons">
+                <p id="add-file-button">+ Add file with words</p>
             </div>
         </section>
     </main>
@@ -68,12 +72,8 @@
                     </div>
                 </form>
             </div>
-
             <div id="div-words-list">
-                <button class="buttons-modal-out" id="words-list-button" onclick="ModalList.open()">Show words list</button>
-            </div>
-            <div id="div-add-file">
-                <button class="buttons-modal-out" id="add-file-button">Add file</button>
+                <button class="buttons-modal-out" onclick="ModalList.open()">Show words list</button>
             </div>
         </div>
     </div>

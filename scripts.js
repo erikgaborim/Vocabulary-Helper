@@ -182,3 +182,14 @@ const App = {
 }
 
 App.init()
+
+/*PARA CONCLUIR:
+
+- Trazer os botões de adicionar arquivo e mostrar lista de palavras para a tela principal;
+- Fazer o sistema de adicionar um arquivo com palavras;
+- Arrumar o botão de fechar da lista de palavras;
+- Possibilitar o usuário deletar palavras adicionadas;
+- Conferir todas as mensagens em inglês;
+- Responsividade.
+
+*/
