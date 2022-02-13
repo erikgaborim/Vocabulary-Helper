@@ -17,3 +17,8 @@
 - Then, click on the red button with a swap icon inside it to raffle a word;
 - To know the drawn word's meaning, click on it;
 - If you want to see all added words on website or remove some of them, click on the button "Show words list" to do it.
+
+<div align="right">
+  <br />
+  <h4>Vocabulary Helper is being developed yet!</h4>
+</div>
