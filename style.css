@@ -272,16 +272,38 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+
+    z-index: 2;
 }
 
 .modal-list-overlay.active{
     visibility: visible;
     opacity: 1;
+
 }
 
 .modal-list{
     background-color: white;
     border-radius: 8px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+    height: 100%;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: white;
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--main-red);
+    border-radius: 30px;
 }
 
 .modal-list h2{
@@ -303,8 +325,33 @@ footer{
 
 .modal-list th:first-child,
 .modal-list td:first-child{
-    width: 50%;
+    width: 45%;
     border-right: none;
+}
+
+.modal-list th:last-child,
+.modal-list td:last-child{
+    width: 10%;
+    border-left: none;
+}
+
+#remove-words-button{
+    background-color: var(--main-red);
+    border: none;
+
+    font: 600;
+    color: white;
+    font-size: 20px;
+
+    text-align: center;
+    min-height: 20px;
+    width: 20px;
+
+    border-radius: 50%;
+}
+
+#remove-words-button:active{
+    background-color: var(--red-hover);
 }
 
 .modal-list td{
@@ -317,9 +364,9 @@ footer{
     width: 26px;
     border: none;
     border-radius: 50%;
-    position: relative;
-    top: -41vh;
-    left: -13px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
     
     text-align: center;
     font-weight: 700;

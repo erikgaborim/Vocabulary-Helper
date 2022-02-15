@@ -16,6 +16,12 @@ const ModalList = {
     }
 }
 
+const AddFile = {
+    alert(){
+        alert("It's not working yet...")
+    }
+}
+
 const Storage = {
     get(){
         return JSON.parse(localStorage.getItem("wordMeaning")) || []
@@ -31,6 +37,11 @@ const Signs = {
 
     add(sign){
         Signs.all.push(sign)
+        App.init()
+    },
+
+    remove(count){
+        Signs.all.splice(count, 1)
         App.init()
     }
 }
@@ -111,19 +122,25 @@ const DOMWordsList = {
         <tr>
             <td>${sign.wordValue}</td>
             <td>${sign.meaningValue}</td>
+            <td><button onclick="Signs.remove(${List.count})" id="remove-words-button">-</button></td>
         </tr>
         `
         return html
+    },
+
+    clearTable(){
+        this.tableBody.innerHTML = ""
     }
 }
 
 const List = {
-    eachSign(){
-        let count = 0;
+    count: 0,
 
+    eachSign(){
+        this.count = 0;
         Signs.all.forEach(sign => {
             DOMWordsList.addSignToList(sign)
-            count++
+            this.count++
         });
     }
 }
@@ -173,11 +190,8 @@ const Form = {
 const App = {
     init(){
         Storage.set(Signs.all)
+        DOMWordsList.clearTable()
         List.eachSign()
-    },
-
-    reload(){
-        DOM.drawAgain()
     }
 }
 
@@ -185,10 +199,8 @@ App.init()
 
 /*PARA CONCLUIR:
 
-- Trazer os botões de adicionar arquivo e mostrar lista de palavras para a tela principal;
 - Fazer o sistema de adicionar um arquivo com palavras;
 - Arrumar o botão de fechar da lista de palavras;
-- Possibilitar o usuário deletar palavras adicionadas;
 - Conferir todas as mensagens em inglês;
 - Responsividade.
 
