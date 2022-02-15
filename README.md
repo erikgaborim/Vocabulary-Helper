@@ -13,7 +13,7 @@
 
 ## How can I use it?
 
-- Firstly, you need to click on the button "Add words to draw list" to type the word you wish drawing and its meaning or click on the button "Add file with words" to input a file with the words that you want to drawing and their respective meanings;
+- Firstly, on the main screen, you need to click on the button "Add words to draw list" to type the word you wish drawing and its meaning or click on the button "Add file with words" to input a file with the words that you want to drawing and their respective meanings;
 - Then, click on the red button with a swap icon inside it to raffle a word;
 - To know the drawn word's meaning, click on it;
 - If you want to see all added words on website or remove some of them, click on the button "Add words to draw list" and then, click on "Show words list" to do it.
