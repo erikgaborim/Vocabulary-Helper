@@ -18,6 +18,11 @@
 - To know the drawn word's meaning, click on it;
 - If you want to see all added words on website or remove some of them, click on the button "Add words to draw list" and then, click on "Show words list" to do it.
 
+## Main Screen
+
+![vocabulay_helper_print](https://user-images.githubusercontent.com/66131453/153976299-76585cad-bcd6-4018-913a-e0380c2d7222.png)
+
+
 <div align="right">
   <br />
   <h4>Vocabulary Helper is being developed yet!</h4>
