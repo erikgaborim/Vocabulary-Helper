@@ -346,7 +346,7 @@ footer{
 }
 
 #remove-words-button:active{
-    background-color: var(--red-hover);
+    opacity: 0.5;
 }
 
 .modal-list td{
