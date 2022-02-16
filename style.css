@@ -342,18 +342,7 @@ footer{
 }
 
 #remove-words-button{
-    background-color: var(--main-red);
-    border: none;
-
-    font: 600;
-    color: white;
-    font-size: 20px;
-
-    text-align: center;
-    min-height: 20px;
-    width: 20px;
-
-    border-radius: 50%;
+    color: var(--main-red);
 }
 
 #remove-words-button:active{

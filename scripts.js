@@ -122,7 +122,7 @@ const DOMWordsList = {
         <tr>
             <td>${sign.wordValue}</td>
             <td>${sign.meaningValue}</td>
-            <td><button onclick="Signs.remove(${List.count})" id="remove-words-button">-</button></td>
+            <td><img onclick="Signs.remove(${List.count})" src="./images/minus.svg" id="remove-words-button"></td>
         </tr>
         `
         return html
