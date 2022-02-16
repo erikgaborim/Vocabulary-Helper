@@ -47,7 +47,9 @@ header p{
 
 #word-box{
     background-color: var(--main-blue);
-    width: 30%;
+    min-width: 30%;
+    max-width: 80%;
+    padding: 0 8px;
     text-align: center;
     color: white;
 }
@@ -75,7 +77,7 @@ header p{
     justify-content: center;
     align-items: center;
     position: absolute;
-    margin-left: -32px;
+    margin-left: -40px;
     margin-top: -32px;
     cursor: pointer;
 }
