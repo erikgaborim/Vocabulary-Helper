@@ -169,6 +169,10 @@ footer{
     visibility: visible;
 }
 
+.general-modal{
+    margin-left: -2.5%;
+}
+
 .modal{
     background-color: white;
     padding: 2% 5%;
