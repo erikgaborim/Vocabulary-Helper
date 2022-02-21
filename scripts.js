@@ -16,10 +16,13 @@ const ModalList = {
     }
 }
 
-const AddFile = {
-    alert(){
-        alert("It's not working yet...")
-    }
+const ModalFile = {
+    open(){
+        document.querySelector('.modal-file-overlay').classList.add('active')
+    },
+    close(){
+        document.querySelector('.modal-file-overlay').classList.remove('active')
+    },
 }
 
 const Storage = {
@@ -43,6 +46,14 @@ const Signs = {
     remove(count){
         Signs.all.splice(count, 1)
         App.init()
+    },
+
+    removeAll(){
+        const sure = confirm('Do you really want to delete all words in the list?')
+        if(sure){
+            Signs.all = []
+            App.init()
+        }
     }
 }
 
@@ -65,7 +76,7 @@ const DOM = {
             countSign++
         });
         if(countSign == 0){
-            alert("Please, enter a word before drawing (on the button 'add words to draw list')")
+            alert("Please type a word before drawing (in the 'Add words to draw list' button).")
         }else{
             DOM.isTheFirstWord = false
             DOM.wordDrawn = Raffle.draw()
@@ -100,7 +111,7 @@ const DOM = {
 
     showMeaning(){
         if(DOM.isTheFirstWord){
-            alert("Draw a word before it! (click on the red button)")
+            alert("Draw a word before it! (click on the red button).")
         }else{
             DOM.wordPlace.innerHTML = DOM.wordDrawn.meaningValue
             DOM.makeDivMeaning()
@@ -145,6 +156,63 @@ const List = {
     }
 }
 
+const File = {
+    file: document.querySelector('#input-file'),
+    isFirstTime: true,
+    arrayWords: [],
+
+    readFile(){
+        if(this.isFirstTime){
+            let files = this.file.files
+
+            if(files.length == 0) return;
+
+            const file = files[0]
+
+            let reader = new FileReader()
+
+            reader.onload = (e) => {
+                const file = e.target.result
+                this.arrayWords = file.split('\n')
+                console.log(this.arrayWords)
+            }
+
+            reader.onerror = (e) => alert(e.target.error.name)
+            reader.readAsText(file)
+
+            alert("The file has been selected. Click the green button to add it to the list.")
+
+            this.isFirstTime = false;
+        }else{
+            alert("Click the 'add' button before selecting other file.")
+        }
+    },
+
+    handleArray(){
+        let count = 0;
+        this.arrayWords.forEach(sign => {
+            if(sign != ""){
+                const array = sign.split(" - ")
+                const wordMeaning = {
+                    wordValue: array[0],
+                    meaningValue: array[1]
+                }
+                Signs.add(wordMeaning)
+            }
+        });
+    },
+
+    submit(event){
+        event.preventDefault()
+        try{            
+            this.handleArray()
+            ModalFile.close()
+        }catch(error){
+            alert(error.message)
+        }
+    }
+ }
+
 const Form = {
     word: document.querySelector('input#word'),
     meaning: document.querySelector('input#meaning'),
@@ -179,8 +247,7 @@ const Form = {
             Form.isVoid();
             Signs.add(Form.getValues())
             Form.clearFields()
-            Modal.close()
-            alert('The word has been added')
+            alert('The word has been added.')
         }catch(error){
             alert(error.message)
         }
@@ -199,9 +266,7 @@ App.init()
 
 /*PARA CONCLUIR:
 
-- Fazer o sistema de adicionar um arquivo com palavras;
-- Arrumar o botão de fechar da lista de palavras;
-- Conferir todas as mensagens em inglês;
+- Repensar o sistema de adição de arquivo;
 - Responsividade.
 
 */

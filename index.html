@@ -45,15 +45,25 @@
                 <p>+ Add words to draw list</p>
             </div>
 
-            <div id="add-file" class="add-words-buttons" onclick="AddFile.alert()">
-                <p id="add-file-button">+ Add file with words</p>
+            <div id="add-file" class="add-words-buttons" onclick="ModalFile.open()">
+                <p>+ Add file with words</p>
+            </div>
+        </section>
+
+        <section id="show-words-section">
+            <div class="div-words-list">
+                <button class="buttons-modal-out" onclick="ModalList.open()">Show words list</button>
             </div>
         </section>
     </main>
 
+    <footer>
+        &copy; Erik Gaborim - 2022
+    </footer>
+
     <div class="modal-overlay">
         <div class="general-modal">
-            <div class="modal">
+            <div class="modal modal-words">
                 <form method="POST" action="" onsubmit="Form.submit(event)">
                     <h3>Write a word and its meaning</h3>
                     <div class="div-input">
@@ -72,10 +82,39 @@
                     </div>
                 </form>
             </div>
-            <div id="div-words-list">
+            <div class="div-words-list">
                 <button class="buttons-modal-out" onclick="ModalList.open()">Show words list</button>
             </div>
         </div>
+        <button class="button-close-modal" onclick="Modal.close()">X</button>
+    </div>
+
+    <div class="modal-file-overlay">
+        <div class="general-modal">
+            <div class="modal modal-file">
+                <form method="POST" action="" onsubmit="File.submit(event)">
+                    <h3>Input a ".txt" file with signs</h3>
+                    <div class="warning">
+                        <p>Each line of the file must follow the pattern below: </p>
+                        <p class="file-pattern">Word - meaning</p>
+                    </div>
+
+                    <div class="div-input-file">
+                        <label class="label-file" for="input-file">Input a ".txt" file</label>
+                        <input type="file" accept=".txt" onchange="File.readFile()" name="input-file" id="input-file">
+                    </div>
+
+                    <div class="div-buttons">
+                        <a class="form-button button-cancel" href="" onclick="ModalFile.close()">Cancel</a>
+                        <button id="submit-file" class=" form-button button-add" type="submit">Add</button>
+                    </div>
+                </form>
+            </div>
+            <div class="div-words-list">
+                <button class="buttons-modal-out" onclick="ModalList.open()">Show words list</button>
+            </div>
+        </div>
+        <button class="button-close-modal" onclick="ModalFile.close()">X</button>
     </div>
 
     <div class="modal-list-overlay">
@@ -94,13 +133,12 @@
                     </tr>
                 </tbody>
             </table>
+            <div class="delete-words-div">
+                <a class="delete-words-button form-button button-cancel" href="" onclick="Signs.removeAll()">Delete all words</a>
+            </div>
         </div>
         <button class="button-close-modal" onclick="ModalList.close()">X</button>
     </div>
-
-    <footer>
-        &copy; Erik Gaborim - 2022
-    </footer>
 
     <script src="./scripts.js"></script>
 </body>
