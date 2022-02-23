@@ -41,7 +41,7 @@ header p{
 #main-section{
     display: flex;
     justify-content: center;
-    margin-top: -5%;
+    margin-top: -10vh;
     margin-bottom: 32px;
 }
 
@@ -118,7 +118,7 @@ header p{
     display: none;
 }
 
-#label-file{
+.label-file{
     height: 100%;
     width: 100%;
     cursor: pointer;
@@ -166,6 +166,7 @@ footer{
     text-align: center;
     padding: 1.6% 0;
     color: var(--letter-footer);
+    z-index: -1;
 }
 
 .modal-overlay{
@@ -198,6 +199,7 @@ footer{
     background-color: white;
     padding: 2% 5%;
     width: 25vw;
+    min-width: 300px;
     border-radius: 0.8rem;
 }
 
@@ -230,7 +232,7 @@ footer{
     border: none;
     height: 5vh;
     width: 50%;
-    margin: 3% 2% 2%;
+    margin: 10px 6px 6px;
     border-radius: 1.25rem;
     cursor: pointer;
     transition: 0.3s;
@@ -307,13 +309,9 @@ footer{
     display: none;
 }
 
-.label-file{
-    cursor: pointer;
-    padding: 5px 30%;
-}
-
 .div-words-list{
     width: 25vw;
+    min-width: 300px;
     padding: 0 5%;
     display: flex;
     justify-content: center;
@@ -322,6 +320,7 @@ footer{
 .buttons-modal-out{
     height: 36px;
     width: 25vw;
+    min-width: 300px;
     padding: 1% 0;
     border-radius: 1.25rem;
     border: none;
@@ -456,4 +455,36 @@ footer{
 
 .button-close-modal:hover{
     background-color: var(--red-hover);
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 800px){
+    #word-box{
+        min-width: 45%;
+    }
+    #add-words-section{
+        display: block;
+        
+    }
+    .add-words-buttons{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    #add-words-section{
+        margin-top: 50px;
+    }
+    #show-words-section{
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media(max-width: 550px){
+    header p{
+        margin: 0 6px;
+    }
+    #word-box{
+        min-width: 65%;
+    }
 }

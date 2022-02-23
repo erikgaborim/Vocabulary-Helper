@@ -174,7 +174,6 @@ const File = {
             reader.onload = (e) => {
                 const file = e.target.result
                 this.arrayWords = file.split('\n')
-                console.log(this.arrayWords)
             }
 
             reader.onerror = (e) => alert(e.target.error.name)
@@ -267,6 +266,6 @@ App.init()
 /*PARA CONCLUIR:
 
 - Repensar o sistema de adição de arquivo;
-- Responsividade.
+- Centralizar de vez os modais e a lista de palavras.
 
 */
