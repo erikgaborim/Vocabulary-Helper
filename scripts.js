@@ -54,6 +54,21 @@ const Signs = {
             Signs.all = []
             App.init()
         }
+    },
+
+    swapValues(){
+        let arraySign = Signs.all
+        arraySign.forEach(sign => {
+            let wordValue = sign.wordValue
+            let meaningValue = sign.meaningValue
+
+            sign.wordValue = meaningValue
+            sign.meaningValue = wordValue
+        });
+
+        Signs.all = arraySign
+        App.init()
+        alert("Words and meanings have been reversed.")
     }
 }
 
@@ -265,6 +280,7 @@ App.init()
 
 /*PARA CONCLUIR:
 
+- Trocar a ordem do sorteio;
 - Repensar o sistema de adição de arquivo;
 - Centralizar de vez os modais e a lista de palavras.
 
