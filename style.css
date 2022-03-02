@@ -474,6 +474,13 @@ footer{
     #add-words-section{
         margin-top: 50px;
     }
+    .div-words-list{
+        display: block;
+    }
+    footer{
+        position: relative;
+        bottom: 0;
+    }
     #show-words-section{
         margin: 0;
         padding: 0;
