@@ -192,7 +192,7 @@ footer{
 }
 
 .general-modal{
-    margin-left: -2.5%;
+    margin-left: -2.5vw;
 }
 
 .modal{
@@ -489,6 +489,9 @@ footer{
         margin: 0;
         padding: 0;
     }
+    .general-modal{
+        margin-left: -5vw;
+    }
 }
 
 @media(max-width: 550px){
@@ -497,5 +500,8 @@ footer{
     }
     #word-box{
         min-width: 65%;
+    }
+    .general-modal{
+        margin-left: -7.5vw;
     }
 }
