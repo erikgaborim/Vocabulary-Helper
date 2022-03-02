@@ -470,6 +470,7 @@ footer{
     .add-words-buttons{
         width: 100%;
         margin-bottom: 10px;
+        padding: 0;
     }
     #add-words-section{
         margin-top: 50px;
@@ -477,8 +478,11 @@ footer{
     .div-words-list{
         display: block;
     }
+    .buttons-modal-out{
+        margin: 4% 0;
+    }
     footer{
-        position: relative;
+        position: absolute;
         bottom: 0;
     }
     #show-words-section{

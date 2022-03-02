@@ -280,7 +280,6 @@ App.init()
 
 /*PARA CONCLUIR:
 
-- Trocar a ordem do sorteio;
 - Repensar o sistema de adição de arquivo;
 - Centralizar de vez os modais e a lista de palavras.
 
