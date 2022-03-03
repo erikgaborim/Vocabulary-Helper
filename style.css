@@ -398,8 +398,14 @@ footer{
     text-align: center;
 }
 
+.div-table-list{
+    width: 100%;
+    display: flex;
+    text-align: center;
+}
+
 .modal-list table{
-    width: 50vw;
+    width: 70vw;
     border-spacing: 0;
     padding: 2%;
 }
@@ -503,5 +509,8 @@ footer{
     }
     .general-modal{
         margin-left: -7.5vw;
+    }
+    .modal-list table{
+        width: 90vw;
     }
 }

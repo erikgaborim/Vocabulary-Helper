@@ -281,6 +281,7 @@ App.init()
 /*PARA CONCLUIR:
 
 - Repensar o sistema de adição de arquivo;
-- Centralizar de vez os modais e a lista de palavras.
+- Centralizar a lista de palavras no sistema responsivo;
+- Refazer o README
 
 */
