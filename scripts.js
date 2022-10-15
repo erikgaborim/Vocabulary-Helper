@@ -32,11 +32,20 @@ const Storage = {
 
     set(wordsMeanings){
         localStorage.setItem("wordMeaning", JSON.stringify(wordsMeanings))
+    },
+
+    getClassify(){
+        return JSON.parse(localStorage.getItem("difficultWords")) || []
+    },
+
+    setClassify(difficultWords){
+        localStorage.setItem("difficultWords", JSON.stringify(difficultWords))
     }
 }
 
 const Signs = {
     all: Storage.get(),
+    allDifficultWords: Storage.getClassify(),
 
     add(sign){
         Signs.all.push(sign)
@@ -69,6 +78,11 @@ const Signs = {
         Signs.all = arraySign
         App.init()
         alert("Words and meanings have been reversed.")
+    },
+
+    addClassify(sign){
+        Signs.allDifficultWords.push(sign)
+        App.init()
     }
 }
 
@@ -97,6 +111,10 @@ const DOM = {
             DOM.wordDrawn = Raffle.draw()
             DOM.showWord()
         }
+    },
+
+    classifyWords(){
+        Signs.addClassify(this.wordDrawn)
     },
 
     makeDivWord(){
@@ -271,6 +289,7 @@ const Form = {
 const App = {
     init(){
         Storage.set(Signs.all)
+        Storage.setClassify(Signs.allDifficultWords)
         DOMWordsList.clearTable()
         List.eachSign()
     }

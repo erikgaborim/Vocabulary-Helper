@@ -86,11 +86,25 @@ header p{
     max-width: 36px;
 }
 
+#classify-section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.classify-button{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: red;
+    cursor: pointer;
+}
+
 #add-words-section{
     display: flex;
     justify-content: space-around;
-    margin: 8% 8% 0;
-
+    margin: 2% 8%;
 }
 
 .add-words-buttons{
