@@ -42,7 +42,7 @@
 
         <section id="classify-section">
             <div class="classify-button" onclick="DOM.classifyWords()">
-                
+                Add this word to the hard words list
             </div>
         </section>
 
@@ -58,13 +58,13 @@
 
         <section id="show-words-section">
             <div class="div-words-list">
-                <button class="buttons-modal-out" onclick="ModalList.open()">Show words list</button>
-                <button class="buttons-modal-out" id="button-swap" onclick="Signs.swapValues()">Swap Values</button>
+                <button class="buttons-modal big" onclick="ModalList.open()">Show list with all words</button>
+                <button class="buttons-modal big" id="button-swap" onclick="Signs.swapValues()">Swap Values</button>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer id="footer">
         &copy; Erik Gaborim - 2022
     </footer>
 
@@ -90,7 +90,7 @@
                 </form>
             </div>
             <div class="div-words-list">
-                <button class="buttons-modal-out" onclick="ModalList.open()">Show words list</button>
+                <button class="buttons-modal out" onclick="ModalList.open()">Show list with all words</button>
             </div>
         </div>
         <button class="button-close-modal" onclick="Modal.close()">X</button>
@@ -118,7 +118,7 @@
                 </form>
             </div>
             <div class="div-words-list">
-                <button class="buttons-modal-out" onclick="ModalList.open()">Show words list</button>
+                <button class="buttons-modal out" onclick="ModalList.open()">Show list with all words</button>
             </div>
         </div>
         <button class="button-close-modal" onclick="ModalFile.close()">X</button>

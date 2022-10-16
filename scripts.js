@@ -82,6 +82,7 @@ const Signs = {
 
     addClassify(sign){
         Signs.allDifficultWords.push(sign)
+        alert('The word has been added to the hard words list')
         App.init()
     }
 }
@@ -114,7 +115,12 @@ const DOM = {
     },
 
     classifyWords(){
-        Signs.addClassify(this.wordDrawn)
+        if(this.wordPlace.innerHTML == 'WORD'){
+            alert('Draw a word before it')
+        }else{
+            Signs.addClassify(this.wordDrawn)
+        }
+        
     },
 
     makeDivWord(){
@@ -297,10 +303,9 @@ const App = {
 
 App.init()
 
-/*PARA CONCLUIR:
+/* PARA FAZER:
 
-- Repensar o sistema de adição de arquivo;
-- Centralizar a lista de palavras no sistema responsivo;
-- Refazer o README
+- lista de palavras classificadas como difíceis;
+- fazer uma seção de sorteio só para palavras difíceis;
 
 */
