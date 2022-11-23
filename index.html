@@ -41,14 +41,30 @@
         </section>
 
         <section id="classify-section">
-            <div class="classify-button" onclick="DOM.classifyWords()">
-                Add this word to the hard words list
+            <div class="classify-subsection">
+                <div class="classify-button " id="classify-button-classify" onclick="DOM.classifyWords()">
+                    Add this word to the hard words list
+                </div>
+
+                <div class="classify-button" id="classify-button-list" onclick="ModalHardWordsList.open()">
+                    Open the hard words list
+                </div>
+            </div>
+
+            <div class="classify-subsection">
+                <div class="classify-button draw" id="draw-hard-words" onclick="Signs.drawHardWords()">
+                    Draw hard words
+                </div>
+
+                <div class="classify-button draw" id="draw-all-words" onclick="Signs.drawRegularWords()">
+                    Draw all words
+                </div>
             </div>
         </section>
 
         <section id="add-words-section">
             <div id="new-words" class="add-words-buttons" onclick="Modal.open()">
-                <p>+ Add words to draw list</p>
+                <p>+ Add words to main list</p>
             </div>
 
             <div id="add-file" class="add-words-buttons" onclick="ModalFile.open()">
@@ -58,7 +74,7 @@
 
         <section id="show-words-section">
             <div class="div-words-list">
-                <button class="buttons-modal big" onclick="ModalList.open()">Show list with all words</button>
+                <button class="buttons-modal big" onclick="ModalList.open()">Show main list (with all words)</button>
                 <button class="buttons-modal big" id="button-swap" onclick="Signs.swapValues()">Swap Values</button>
             </div>
         </section>
@@ -148,6 +164,32 @@
             </div>
         </div>
         <button class="button-close-modal" onclick="ModalList.close()">X</button>
+    </div>
+
+    <div class="modal-list-overlay hard-words">
+        <div class="modal-list hard-words">
+            <h2>Hard words list</h2>
+            <div class="div-table-list hard-words">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Word</th>
+                            <th>Meaning</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="delete-words-div">
+                <a class="delete-words-button form-button button-cancel" href="" onclick="Signs.removeAllHardWords()">Delete all words</a>
+            </div>
+        </div>
+        <button class="button-close-modal" onclick="ModalHardWordsList.close()">X</button>
     </div>
 
     <script src="./scripts.js"></script>

@@ -16,6 +16,15 @@ const ModalList = {
     }
 }
 
+const ModalHardWordsList = {
+    open(){
+        document.querySelector('.modal-list-overlay.hard-words').classList.add('active')
+    },
+    close(){
+        document.querySelector('.modal-list-overlay.hard-words').classList.remove('active')
+    }
+}
+
 const ModalFile = {
     open(){
         document.querySelector('.modal-file-overlay').classList.add('active')
@@ -45,6 +54,7 @@ const Storage = {
 
 const Signs = {
     all: Storage.get(),
+    all2: [],
     allDifficultWords: Storage.getClassify(),
 
     add(sign){
@@ -55,6 +65,19 @@ const Signs = {
     remove(count){
         Signs.all.splice(count, 1)
         App.init()
+    },
+
+    removeHardWord(count){
+        Signs.allDifficultWords.splice(count, 1)
+        App.init()
+    },
+
+    removeAllHardWords(){
+        const sure = confirm('Do you really want to delete all words in the hard words list?')
+        if(sure){
+            Signs.allDifficultWords = []
+            App.init()
+        }
     },
 
     removeAll(){
@@ -81,9 +104,41 @@ const Signs = {
     },
 
     addClassify(sign){
-        Signs.allDifficultWords.push(sign)
-        alert('The word has been added to the hard words list')
-        App.init()
+        if(Signs.allDifficultWords.includes(sign)){
+            alert("This word has already been added to the hard words list. You can't do it again")
+        }else{
+            Signs.allDifficultWords.push(sign)
+            alert('The word has been added to the hard words list')
+            App.init()
+        }
+    },
+
+    drawHardWords(){
+        if(Signs.all = []){
+            alert("You can't do it because your main list is void")
+        } else{
+            if(Signs.all != Signs.allDifficultWords){
+                Signs.all2 = Signs.all
+            }
+            Signs.all = Signs.allDifficultWords
+            alert("Now just words classified as 'hard words' are going to be drawn. To change it and draw all words, click on the blue button 'draw all words'")
+            App.init()
+        }
+    },
+
+    drawRegularWords(){
+        if(Signs.all = []){
+            alert("You can't do it because your main list is void")
+        }else{
+            if(Signs.all2 == [] || Signs.all == Signs.all2){
+                alert("Regular words are already selected")
+            }else{
+                console.log(Signs.all2)
+                Signs.all = Signs.all2
+                alert("Now all words are going to be drawn")
+                App.init()
+            }
+        }
     }
 }
 
@@ -106,7 +161,7 @@ const DOM = {
             countSign++
         });
         if(countSign == 0){
-            alert("Please type a word before drawing (in the 'Add words to draw list' button).")
+            alert("Please type a word before drawing (in the 'Add words to main list' button).")
         }else{
             DOM.isTheFirstWord = false
             DOM.wordDrawn = Raffle.draw()
@@ -190,6 +245,43 @@ const List = {
         this.count = 0;
         Signs.all.forEach(sign => {
             DOMWordsList.addSignToList(sign)
+            this.count++
+        });
+    }
+}
+
+const DOMHardWordsList = {
+    tableBody: document.querySelector('.modal-list.hard-words tbody'),
+
+    addSignToList(sign){
+        const newSign = document.createElement('tr')
+        newSign.innerHTML = DOMHardWordsList.innerHTMLSign(sign);
+        DOMHardWordsList.tableBody.appendChild(newSign)
+    },
+
+    innerHTMLSign(sign){
+        const html = `
+        <tr>
+            <td>${sign.wordValue}</td>
+            <td>${sign.meaningValue}</td>
+            <td><img onclick="Signs.removeHardWord(${HardWordsList.count})" src="./images/minus.svg" id="remove-words-button"></td>
+        </tr>
+        `
+        return html
+    },
+
+    clearTable(){
+        this.tableBody.innerHTML = ""
+    }
+}
+
+const HardWordsList = {
+    count: 0,
+
+    eachSign(){
+        this.count = 0;
+        Signs.allDifficultWords.forEach(sign => {
+            DOMHardWordsList.addSignToList(sign)
             this.count++
         });
     }
@@ -297,7 +389,9 @@ const App = {
         Storage.set(Signs.all)
         Storage.setClassify(Signs.allDifficultWords)
         DOMWordsList.clearTable()
+        DOMHardWordsList.clearTable()
         List.eachSign()
+        HardWordsList.eachSign()
     }
 }
 
