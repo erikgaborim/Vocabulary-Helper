@@ -9,7 +9,7 @@
 
 ## What does Vocabulary Helper do?
 
-- It draws words in other languages typed by user so that the user tries to remember their meaning. After that, it shows him the real meaning of these words (previously typed by user too), helping the student to memorize the language vocabulary that he wants to learn.
+- It draws words in other languages typed by user so that the user tries to remember their meaning. Then, it shows him the real meaning of these words (previously typed by user too), helping the student to memorize the language vocabulary that he wants to learn.
 
 ## How can I use it?
 
