@@ -26,5 +26,5 @@
 
 <div align="right">
   <br />
-  <h4>Vocabulary Helper is being developed yet!</h4>
+  <h4>Vocabulary Helper is still being developed!</h4>
 </div>
