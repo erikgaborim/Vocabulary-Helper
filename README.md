@@ -9,13 +9,13 @@
 
 ## What does Vocabulary Helper do?
 
-- It draws words in other languages typed by user so that the user tries to remember their meaning. Then, it shows him the real meaning of these words (previously typed by user too), helping the student to memorize the language vocabulary that he wants to learn.
+- It draws words in other languages typed by user so that the user tries to remember their meaning. Then, it shows him the real meaning of these words (previously typed by user too), helping the student to memorize the vocabulary of the language that he wants to learn.
 
 ## How can I use it?
 
-- Firstly, on the main screen, you need to click on the button "Add words to draw list" to type the word you wish drawing and its meaning or click on the button "Add file with words" to input a file with the words that you want to drawing and their respective meanings;
+- Firstly, on the main screen, you need to click on the button "Add words to draw list" to type the word you wish drawing and its meaning. You can also click on the button "Add file with words" to input a file with the words that you want to draw and their respective meanings (following the pattern showed on the website);
 - Then, click on the red button with a swap icon inside it to raffle a word;
-- To know the drawn word's meaning, click on the word;
+- To know the drawn word's meaning, click on the word (the blue main box);
 - If you want to see all added words on website or remove some of them, click on the button "Show main list (with all words)" to do it;
 - Also, if you want to classify a drawn word as a "difficult word" (it means, a word that you always forget its meaning), you just need to click on the red button "Add this word to the hard words list". You can see all words classified as "hard" clicking on the red button "Open the hard words list". If you just want to draw hard words, click on the blue button "Draw hard words". Finally, to draw all words again (and not just the difficult ones), click on "Draw all words".
 
