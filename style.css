@@ -12,7 +12,7 @@ body, html{
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    height: 100%;
+    min-height: 100%;
 }
 
 header{
@@ -499,22 +499,29 @@ header p{
 
 /* RESPONSIVE */
 
+@media(min-width: 1600px){
+    #footer{
+        position: absolute;
+        bottom: 0;
+    }
+}
+
 @media(min-width: 1920px){
     header{
-        height: 320px;
-        font-size: 36px;
+        height: 300px;
+        font-size: 28px;
     }
     header p{
-        font-size: 36px;
+        font-size: 28px;
     }
     #main-section{
-        margin-top: -100px;
+        margin-top: -120px;
     }
     #word-box{
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 60%;
+        width: 30%;
         height: 250px;
         font-size: 30px;
     }
@@ -523,13 +530,33 @@ header p{
     }
     #drawn-button{
         position: absolute;
-        margin-left: -61%;
+        margin-left: -31%;
         margin-bottom: -275px;
         height: 75px;
         width: 75px;
     }
+    #drawn-button img{
+        max-width: 40px;
+    }
     .classify-button{
-        font-size: 20px;
+        font-size: 26px;
+        height: 3.5rem;
+        width: 32rem;
+        margin: 6px 0;
+    }
+    .add-words-buttons{
+        font-size: 26px;
+        width: 400px;
+    }
+    .buttons-modal{
+        height: 56px;
+        min-width: 340px;
+        padding: 1% 0;
+        font-size: 26px;
+    }
+    #footer{
+        position: relative;
+        font-size: 28px;
     }
 }
 
@@ -576,11 +603,30 @@ header p{
 }
 
 @media(max-width: 550px){
+    header{
+        height: 20vh;
+    }
     header p{
         margin: 0 6px;
     }
+    #main-section{
+        margin-top: -15%;
+    }
     #word-box{
-        min-width: 65%;
+        width: 75%;
+        height: 140px;
+    }
+    #drawn-button{
+        position: absolute;
+        margin-left: -8%;
+        height: 50px;
+        width: 50px;
+    }
+    #drawn-button img{
+        max-width: 30px;
+    }
+    #show-words-section{
+        margin: 1.5rem 0 1rem;
     }
     .general-modal{
         margin-left: -7.5vw;
