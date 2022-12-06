@@ -12,6 +12,7 @@ body, html{
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
+    height: 100%;
 }
 
 header{
@@ -98,8 +99,8 @@ header p{
 }
 
 .classify-button{
-    height: 40px;
-    width: 290px;
+    height: 2.5rem;
+    width: 30rem;
     margin: 6px 0;
     border-radius: 8px;
     border: none;
@@ -195,7 +196,6 @@ header p{
     padding: 0.5% 0;
     text-align: center;
     color: var(--letter-footer);
-    z-index: -1;
 }
 
 .modal-overlay{
@@ -499,6 +499,40 @@ header p{
 
 /* RESPONSIVE */
 
+@media(min-width: 1920px){
+    header{
+        height: 320px;
+        font-size: 36px;
+    }
+    header p{
+        font-size: 36px;
+    }
+    #main-section{
+        margin-top: -100px;
+    }
+    #word-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        height: 250px;
+        font-size: 30px;
+    }
+    #word-box h2{
+        font-size: 60px;
+    }
+    #drawn-button{
+        position: absolute;
+        margin-left: -61%;
+        margin-bottom: -275px;
+        height: 75px;
+        width: 75px;
+    }
+    .classify-button{
+        font-size: 20px;
+    }
+}
+
 @media(max-width: 800px){
     #word-box{
         min-width: 45%;
@@ -528,6 +562,13 @@ header p{
     #show-words-section{
         margin: 0;
         padding: 0;
+    }
+    #classify-section{
+        flex-direction: column;
+    }
+    .classify-button{
+        height: 50px;
+        width: 250px;
     }
     .general-modal{
         margin-left: -5vw;
