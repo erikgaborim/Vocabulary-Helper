@@ -17,6 +17,7 @@
 - Then, click on the red button with a swap icon inside it to raffle a word;
 - To know the drawn word's meaning, click on the word (the blue main box);
 - If you want to see all added words on website or remove some of them, click on the button "Show main list (with all words)" to do it;
+- The blue button "Swap values" causes the system to show the meaning of a word typed by the user (instead of the opposite), who must try to guess the word in another language which has this meaning in his first language;
 - Also, if you want to classify a drawn word as a "difficult word" (it means, a word that you always forget its meaning), you just need to click on the red button "Add this word to the hard words list". You can see all words classified as "hard" clicking on the red button "Open the hard words list". If you just want to draw hard words, click on the blue button "Draw hard words". Finally, to draw all words again (and not just the difficult ones), click on "Draw all words".
 
 ## Main Screen
