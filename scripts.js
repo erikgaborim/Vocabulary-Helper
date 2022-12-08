@@ -114,20 +114,22 @@ const Signs = {
     },
 
     drawHardWords(){
-        if(Signs.all = []){
+        if(Signs.all == []){
             alert("You can't do it because your main list is void")
         } else{
             if(Signs.all != Signs.allDifficultWords){
                 Signs.all2 = Signs.all
+                Signs.all = Signs.allDifficultWords
+                alert("Now just words classified as 'hard words' are going to be drawn. To change it and draw all words, click on the blue button 'draw all words'")
+                App.init()
+            }else{
+                alert("Hard words are already selected")
             }
-            Signs.all = Signs.allDifficultWords
-            alert("Now just words classified as 'hard words' are going to be drawn. To change it and draw all words, click on the blue button 'draw all words'")
-            App.init()
         }
     },
 
     drawRegularWords(){
-        if(Signs.all = []){
+        if(Signs.all == []){
             alert("You can't do it because your main list is void")
         }else{
             if(Signs.all2 == [] || Signs.all == Signs.all2){
