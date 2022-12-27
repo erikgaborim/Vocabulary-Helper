@@ -114,8 +114,10 @@ const Signs = {
     },
 
     drawHardWords(){
-        if(Signs.all == []){
+        if(Signs.all == ''){
             alert("You can't do it because your main list is void")
+        }else if (Signs.allDifficultWords == ''){
+            alert("You can't do it because your hard words list is void")
         } else{
             if(Signs.all != Signs.allDifficultWords){
                 Signs.all2 = Signs.all
@@ -129,10 +131,10 @@ const Signs = {
     },
 
     drawRegularWords(){
-        if(Signs.all == []){
+        if(Signs.all == ''){
             alert("You can't do it because your main list is void")
         }else{
-            if(Signs.all2 == [] || Signs.all == Signs.all2){
+            if(Signs.all2 == '' || Signs.all == Signs.all2){
                 alert("Regular words are already selected")
             }else{
                 console.log(Signs.all2)
